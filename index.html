@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" href="FK_icon.png">
+    <title>Flipkart clone</title>
+
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    
+        .ad {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 220px;
+        }
+        .ad img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: left 1s ease; /* Adjust the transition for smooth swapping */
+        }
+    </style>
+</head>
+<body class="bg-[#eef2f6] h-full">
+        <!-- header section starts here -->
+        <header>
+            <div class="navbar sm:h-[65px] h-[50px] w-auto bg-[white] sm:grid sm:grid-cols-[15%_50%_35%] flex sm:px-[65px] items-center">
+                <!--mobile- Menu starts-->
+                <div class="sm:hidden size-[45px] font-light ml-[15px] mt-[5%]">
+                    <img  src="FK_mobileMenu.svg" alt="">
+                </div>
+                <!--mobile- Menu ends-->
+
+
+                <!--logo (box 1) starts here-->
+                <div class="sm:pl-[30px] pl-[30px] mt-[1%]">
+                    <img src="FK_main_logo.png" alt="" class= "sm:h-[40px] sm:w-[90px] h-[43px] w-[140px]">
+                </div>
+                <!--logo (box 1) starts here-->
+
+
+                <!--input box starts here (box 2)-->
+                <div class=" hidden sm:flex place-items-center">
+                    <div class="flex place-items-center bg-[#ebf2f3] size-[40.5px] mb-[.09px]  rounded-l-[10px]">
+                    <img class="pl-[10px]" src="FK_search_mgGlass.png" alt="">
+                    </div>
+                    <input type="text" placeholder="Search for Products, Brands and More" class="h-[40px] w-[540px] bg-[#ebf2f3] rounded-[10px] rounded-l-none pl-[10px] pb-[6px]">
+                    
+                </div>
+                <!--input box ends here (box 2)-->
+
+
+                <!--box 3 starts here-->
+                <div class="flex justify-end w-full sm:pr-[10px]">
+                    <!--login-->
+                    <div class="login flex mr-[20px] hover:bg-blue-700 hover:text-white rounded-md">
+                        <img class="" src="FK_login_pic.svg" alt="">
+                        <button class="pl-[3px] ">Login</button>
+                        <img class="pt-[5px] pl-[1px] sm:block hidden" src="FK_login_downArorw.svg" alt="">
+                        <!-- <i class="pt-[15%] pl-[5px] font-extralight text-[10px] fas fa-chevron-down"></i> -->
+                    </div>
+
+                    <!--cart-->
+                    <div class="flex mr-[20px]">
+                        <img src="FK_kart_img.svg" alt="">
+                        <h1 class="pl-[10px] pt-[5%] sm:flex hidden">Cart</h1>
+                    
+                    </div>
+
+                    <!--seller-->
+                    <div class="sm:flex hidden">
+                        <img class="pl-[40px]" src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/Store-9eeae2.svg" alt="">
+                        <h1 class="pl-[5px] pt-[1%]">Become a Seller</h1>
+
+                        <h1 class="font-extrabold  pt-[1.5%] pl-[40px]">&#8942;</h1>
+                    </div>
+                </div>
+                <!--box 3 ends here-->
+                
+            </div>
+        </header>
+        <!-- header section ends here -->
+
+        <!-- mainBody section starts here -->
+        <div class="mainBody sm:h-auto h-auto  mx-auto sm:mt-[8px] sm:w-full sm:px-[15px]">
+
+            <!--  top offers section starts here -->
+            <div class="topoffers hidden sm:flex bg-white  h-[130px] w-full  items-center justify-evenly px-[60px] shadow-sm">
+
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/12e1ef5720394d33.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Top Offers</h1>
+                </div>
+
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/39a5455dfa3a6e09.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Mobiles & Tablets</h1>
+                </div>
+                
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/07eaf6881d416ef9.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">TVs & Appliances</h1>
+                </div>
+                
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/a72369170563cf50.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Electronics</h1>
+                </div>
+                
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/d5f37d2f45157db3.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Beauty</h1>
+                </div>
+                
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/367e2bc66f3e0871.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Home and Kitchen  </h1>
+                </div>
+                
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/f88c5f353db775a8.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Furniture</h1>
+                </div>
+                
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/dc38be6a876778f6.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Travel</h1>
+                </div>
+                
+                <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                    <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/eaaf0fc36fb4097e.png?q=100" alt="">
+                    <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Grocery</h1>
+                </div>
+                
+            </div>
+
+            <!--  top offers for mobile starts-->
+            <div class="flex bg-white sm:hidden h-[130px] w-full items-center justify-evenly overflow-x-auto hide-scrollbar">
+                <div class="flex">
+                    <div class="bg-white h-[120px] w-[118px] flex flex-col justify-center items-center">
+                        <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/12e1ef5720394d33.png?q=100" alt="">
+                        <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Top Offers</h1>
+                    </div>
+            
+                    <div class="bg-white h-[120px] w-[118px] flex flex-col justify-center items-center">
+                        <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/39a5455dfa3a6e09.png?q=100" alt="">
+                        <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Mobiles & Tablets</h1>
+                    </div>
+                    
+                    <div class="bg-white h-[120px] w-[118px] flex flex-col justify-center items-center">
+                        <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/07eaf6881d416ef9.png?q=100" alt="">
+                        <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">TVs & Appliances</h1>
+                    </div>
+                    
+                    <div class="bg-white h-[120px] w-[118px] flex flex-col justify-center items-center">
+                        <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/a72369170563cf50.png?q=100" alt="">
+                        <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Electronics</h1>
+                    </div>
+
+                    <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                        <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/367e2bc66f3e0871.png?q=100" alt="">
+                        <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Home and Kitchen</h1>
+                    </div>
+                    
+                    <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                        <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/f88c5f353db775a8.png?q=100" alt="">
+                        <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Furniture</h1>
+                    </div>
+                    
+                    <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                        <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/dc38be6a876778f6.png?q=100" alt="">
+                        <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Travel</h1>
+                    </div>
+                    
+                    <div class="bg-white h-[120px]  w-[118px] flex flex-col justify-center items-center">
+                        <img class="size-[65px] mb-[10px]" src="https://rukminim2.flixcart.com/fk-p-flap/88/88/image/eaaf0fc36fb4097e.png?q=100" alt="">
+                        <h1 class="text-[14px] text-center font-semibold text-[#3e3d3d]">Grocery</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- top offers for mobile ends-->
+            <!--  top offers section ends here -->
+
+            <!--  ad section starts here -->
+            <div class=" ad bg-white mt-[18px] z-0  sm:h-[220px] h-[80px] w-full">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/97f695ce49d7a367.jpg?q=20" alt="">
+            </div>
+            <!--  ad section ends here -->
+
+
+            <!--  SBI card starts here -->
+            <div class="mt-[18px]">
+                <img src="https://rukminim2.flixcart.com/fk-p-flap/1600/140/image/606a19936b528d9d.jpg?q=20" alt="">
+            </div>
+            <!--  SBI card ends here -->
+
+            <!-- Phone offer starts here -->
+            <div class="hidden sm:block bg-white mt-[18px] h-[330px]  w-full mb-[20px] ">
+                <h1 class="text-[25px] font-semibold pt-[10px] pl-[20px]">Deals On Smartphones</h1>
+                <div class="flex justify-evenly pr-[1%]">
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/w/3/4/-original-imahyytukhkky5ew.jpeg?q=90" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Vivo T3X 5G</p>
+                        <p class="text-center text-[15px] font-semibold ">From  &#8377; 12,499*</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/g/i/n/-original-imagzhspjy5g8nh3.jpeg?q=90" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Motorola Edge 50 Pro 5G</p>
+                        <p class="text-center text-[15px] font-semibold ">From  &#8377; 27,999*</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/s/9/i/m6-pro-5g-mzb0eqjin-poco-original-imags3e7dazavyje.jpeg?q=90" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Poco M6 Pro 5G</p>
+                        <p class="text-center text-[15px] font-semibold ">From  &#8377; 8,999*</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/l/v/4/galaxy-f15-5g-sm-e156b-samsung-original-imagyhkbkdy56zej.jpeg?q=90" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Galaxy F15 5G</p>
+                        <p class="text-center text-[15px] font-semibold ">From  &#8377; 10,999*</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/p/p/f/-original-imahyaaxj2kcvvuw.jpeg?q=90" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Realme P1 5G</p>
+                        <p class="text-center text-[15px] font-semibold ">From  &#8377; 12,499*</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim2.flixcart.com/image/200/200/xif0q/mobile/j/q/2/edge-40-neo-payj0001in-motorola-original-imagtkf5ewhafvhh.jpeg?q=70" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Motorola Edge 50 Neo 5G</p>
+                        <p class="text-center text-[15px] font-semibold ">From  &#8377; 12,499*</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Phone offer ends here -->
+
+
+            <!-- Phone offer for sm starts here -->
+            <div class="bg-white mt-[18px] h-auto  w-full block sm:hidden">
+                <div class="grid grid-cols-[91%_auto]">
+                    <div><h1 class="font-semibold text-[19px] pt-[2%] pl-[3%] pb-[1%]">Deals On Smartphones</h1></div>
+                    <div class= "flex items-center bg-[#2A55E5] rounded-[50%] w-[25px] h-[25px] mt-[20%] mr-[1%] pl-[7px] pb-[5px] "><p class="text-white text-[20px] ">></p></div>
+                </div>
+
+                <div class="bg-white mt-[18px] h-auto w-full  pr-[2%]">
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/w/3/4/-original-imahyytukhkky5ew.jpeg?q=90" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Vivo T3X 5G</p>
+                            <p class="text-[15px] font-light ">From &#8377; 12,499*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/g/i/n/-original-imagzhspjy5g8nh3.jpeg?q=90" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Motorola Edge 50 Pro 5G</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 27,999*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/s/9/i/m6-pro-5g-mzb0eqjin-poco-original-imags3e7dazavyje.jpeg?q=90" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Poco M6 Pro 5G</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 8,999*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/l/v/4/galaxy-f15-5g-sm-e156b-samsung-original-imagyhkbkdy56zej.jpeg?q=90" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Galaxy F15 5G</p>
+                            <p class="text-[15px] font-light ">From &#8377; 17,999*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/170/170/xif0q/mobile/p/p/f/-original-imahyaaxj2kcvvuw.jpeg?q=90" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Realme P1 5G</p>
+                            <p class="text-[15px] font-light ">From &#8377; 16,499*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim2.flixcart.com/image/200/200/xif0q/mobile/j/q/2/edge-40-neo-payj0001in-motorola-original-imagtkf5ewhafvhh.jpeg?q=70" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Motorola Edge 50 Neo 5G</p>
+                            <p class="text-[15px] font-light ">From &#8377; 12,499*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/64/64/xif0q/mobile/n/m/f/g34-5g-pb1v0002in-motorola-original-imagwu4rayqhgfjh.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Moto G34 5G</p>
+                            <p class="text-[15px] font-light ">From &#8377; 9,999*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/64/64/xif0q/mobile/c/x/q/g64-5g-pb2e0002in-motorola-original-imagzzd4ewmjhyfx.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Moto g64 5G</p>
+                            <p class="text-[15px] font-light ">From &#8377; 12,999*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Phone offer for sm ends here -->
+
+            <!-- big 3 offers starts here -->
+            <div class=" bg-[#ffffff] mt-[15px] sm:h-[250px] h-[65px]  w-full mb-[20px]">
+                <div class="flex w-full h-full justify-evenly">
+                    <div>
+                        <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/e3fc2437e2891de0.jpg?q=20" alt="">
+                    </div>
+                    <div>
+                        <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/66cff0db3cbf776a.jpg?q=20" alt="">
+                    </div>
+                    <div>
+                        <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/cdfb91fe95ecd037.jpg?q=20" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- big 3 offers ends here --> 
+            
+            <!-- Top offers on fashion starts -->
+            <div class="hidden sm:block bg-white mt-[18px] h-[330px] mb-[20px]  w-full  ">
+                <h1 class="text-[25px] font-semibold pt-[10px] pl-[20px]"> Top Deals On Fashion</h1>
+                <div class="flex justify-evenly pr-[1%]">
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/64/64/l45xea80/kids-apparel-combo/g/z/7/1-2-years-gl-white-ninas-original-imagf4pnmzqygcws.jpeg?q=80" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Kids' Combosets</p>
+                        <p class="text-center text-[15px] font-semibold ">Min. 75% Off</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/128/128/xif0q/sari/v/l/q/free-df-vishva-maroon-lichi-soft-silk-jacquard-woven-saree-heavy-original-imagh8hytfggqhg8.jpeg?q=60" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Wedding Sarees</p>
+                        <p class="text-center text-[15px] font-semibold ">Under &#8377; 999</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/5aa98b7cee183286.jpg?q=60" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Woodland, Crocs, Red Ta...</p>
+                        <p class="text-center text-[15px] font-semibold ">Min. 40% Off</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/64/64/kcnp8y80/accessories-combo/2/y/7/0ip6cbwfr005i-united-colors-of-benetton-original-imaftq7y5j22yepb.jpeg?q=80" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Wallets & Belts</p>
+                        <p class="text-center text-[15px] font-semibold ">Min 70% Off</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]" src="https://rukminim1.flixcart.com/image/64/64/xif0q/shoe/s/k/s/4-5-376169-puma-rose-dust-warm-white-hibiscus-flower-original-imaghkpgyzvg2rf7.jpeg?q=80" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Adidas, Puma & more</p>
+                        <p class="text-center text-[15px] font-semibold ">Min 40% Off</p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[180px]  ml-[30px]" src="https://rukminim1.flixcart.com/image/64/64/l2tcfbk0/kurta/9/g/j/xxl-indigobird-stylum-original-image2g7ym9fu9wt.jpeg?q=80" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Super Offers on Kurtas & Sets</p>
+                        <p class="text-center text-[15px] font-semibold ">Under  &#8377; 599</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Top offers on ends starts -->
+
+            <!-- Top offers on fashion for sm starts -->
+            <div class="bg-white mt-[18px] h-auto  w-full block sm:hidden">
+                <div class="grid grid-cols-[91%_auto]">
+                    <div><h1 class="font-semibold text-[19px] pt-[2%] pl-[3%] pb-[1%]">Top Deals On Fashion</h1></div>
+                    <div class= "flex items-center bg-[#2A55E5] rounded-[50%] w-[25px] h-[25px] mt-[20%] mr-[1%] pl-[7px] pb-[5px] "><p class="text-white text-[20px] ">></p></div>
+                </div>
+
+                <div class="bg-white mt-[18px] h-auto w-full  pr-[2%]">
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/64/64/l45xea80/kids-apparel-combo/g/z/7/1-2-years-gl-white-ninas-original-imagf4pnmzqygcws.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Kids' Combosets</p>
+                            <p class="text-[15px] font-light ">Min. 75% Off</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/128/128/xif0q/sari/v/l/q/free-df-vishva-maroon-lichi-soft-silk-jacquard-woven-saree-heavy-original-imagh8hytfggqhg8.jpeg?q=60" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Wedding Sarees</p>
+                            <p class="text-[15px] font-light ">Under &#8377; 999</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/5aa98b7cee183286.jpg?q=60" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Woodland, Crocs, Red Ta...</p>
+                            <p class="text-[15px] font-light ">Min. 40% Off</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/64/64/kcnp8y80/accessories-combo/2/y/7/0ip6cbwfr005i-united-colors-of-benetton-original-imaftq7y5j22yepb.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Wallets & Belts</p>
+                            <p class="text-[15px] font-light ">Min 70% Off</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/64/64/xif0q/shoe/s/k/s/4-5-376169-puma-rose-dust-warm-white-hibiscus-flower-original-imaghkpgyzvg2rf7.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Adidas, Puma & more</p>
+                            <p class="text-[15px] font-light ">Min 40% Off</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/64/64/l2tcfbk0/kurta/9/g/j/xxl-indigobird-stylum-original-image2g7ym9fu9wt.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Super Offers on Kurtas & Sets</p>
+                            <p class="text-[15px] font-light ">Under  &#8377; 599</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim2.flixcart.com/image/200/200/xif0q/shoe/0/u/t/-original-imagzevjzpn7mwb6.jpeg?q=70" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Adidas, Puma and More</p>
+                            <p class="text-[15px] font-light ">Min 40% Off</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim2.flixcart.com/image/200/200/xif0q/sandal/f/y/i/6-41-4157-39-mochi-24-pink-original-imagkvay8unkyphc.jpeg?q=70" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Metro, Mochi</p>
+                            <p class="text-[15px] font-light ">Min 50% Off</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Top offers on fashion for sm ends -->
+
+
+            <!-- big 3 offers 2 starts here -->
+            <div class=" bg-[#ffffff] sm:h-[250px] h-[65px]  w-full">
+                <div class="flex w-full h-full justify-evenly">
+                    <div>
+                        <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/a96e013af368b1a0.jpg?q=20" alt="">
+                    </div>
+                    <div>
+                        <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/6537e82f357a7f59.jpg?q=20" alt="">
+                    </div>
+                    <div>
+                        <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim1.flixcart.com/fk-p-flap/520/280/image/7752d50f0921302d.jpg?q=20" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- big 3 offers 2 ends here --> 
+
+
+            <!-- featured brands starts here -->
+            <div class="hidden sm:block bg-white mt-[20px] h-[660px]  w-full ">
+                <!-- 3 ads starts -->
+                <div class="hidden sm:block bg-white mt-[18px] h-[330px]  w-full mb-[50px] ">
+                    <h1 class="text-[25px] font-semibold pt-[10px] pl-[20px]">Featured Brands</h1>
+                    <div class="flex justify-evenly pr-[.5%] pt-[20px] ml-[7px]">
+                        <div class="h-[270px] w-[440px] bg-[grey]">
+                            <img class="" src="https://rukminim2.flixcart.com/fk-p-flap/450/280/image/7b80c6063ecf7931.png?q=20" alt="">
+                        </div>
+                        <div class="h-[270px] w-[440px] bg-[grey]">
+                            <img src="https://rukminim2.flixcart.com/fk-p-flap/450/280/image/edce25428279353e.jpeg?q=20" alt="">
+                        </div>
+                        <div class="h-[270px] w-[440px] bg-[grey]">
+                            <img src="https://rukminim2.flixcart.com/fk-p-flap/450/280/image/e863e64b323fb926.png?q=20" alt="">
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- 3 ads ends -->
+
+                <!-- top deals on electronics starts -->
+                <div class="hidden sm:block bg-white mt-[18px] h-[330px]  w-full mb-[50px] ">
+                    <h1 class="text-[25px] font-semibold pt-[10px] pl-[20px]">Top Deals On Electronics</h1>
+                    <div class="flex justify-evenly pr-[1%]">
+                        <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                            <img class="h-[120px]" src="https://rukminim2.flixcart.com/image/170/170/xif0q/tablet/q/g/l/-original-imagruhfgtg58rrg.jpeg?q=80" alt="">
+                            <p class="text-center text-[15px] h-[15px]">Samsung S9 Series</p>
+                            <p class="text-center text-[15px] font-semibold ">From  &#8377; 61,949*</p>
+                        </div>
+                        <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                            <img class="h-[120px]" src="https://rukminim2.flixcart.com/image/170/170/l4fxh8w0/computer/s/i/s/-original-imagfc54nty5wgeh.jpeg?q=80" alt="">
+                            <p class="text-center text-[15px] h-[15px]">Big Savings On i5 L ...</p>
+                            <p class="text-center text-[15px] font-semibold ">From  &#8377; 24,999*</p>
+                        </div>
+                        <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                            <img class="h-[120px]" src="https://rukminim2.flixcart.com/image/170/170/jrqo70w0/dslr-camera/e/d/c/d7500-d7500-nikon-original-imaf6n7gk7zkeybb.jpeg?q=80" alt="">
+                            <p class="text-center text-[15px] h-[15px]">Nikon D7500 DSLR</p>
+                            <p class="text-center text-[15px] font-semibold ">Just  &#8377; 66,499*</p>
+                        </div>
+                        <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                            <img class="h-[120px] pl-[20px]" src="https://rukminim2.flixcart.com/image/170/170/kd7pevk0/power-bank/s/n/g/power-bank-10000-pb100lzm-redmi-original-imafu5entn9mvccq.jpeg?q=80" alt="">
+                            <p class="text-center text-[15px] h-[15px]">Mi & REDMI</p>
+                            <p class="text-center text-[15px] font-semibold ">From  &#8377; 1,049*</p>
+                        </div>
+                        <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                            <img class="h-[120px]" src="https://rukminim2.flixcart.com/image/200/200/xif0q/monitor/o/p/5/ls22a334nhwxxl-full-hd-22-2022-ls22a334nhwxxl-samsung-original-imagsqhebkuehwfw.jpeg?q=70" alt="">
+                            <p class="text-center text-[15px] h-[15px]">Samsung Monitors</p>
+                            <p class="text-center text-[15px] font-semibold ">From  &#8377; 5,579*</p>
+                        </div>
+                        <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                            <img class="h-[80px]" src="https://rukminim2.flixcart.com/image/200/200/kyxb9u80/keyboard/a/z/y/-original-imagbfufzpwx7tk3.jpeg?q=70" alt="">
+                            <p class="text-center text-[15px] h-[15px] pt-[20px]">Top Brands On Keyboards</p>
+                            <p class="text-center text-[15px] font-semibold ">From  &#8377; 548*</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- top deals on electronics ends -->
+            </div>
+            <!-- top featured brands ends here -->
+
+
+            <!-- featured brands sm starts here -->
+            <div class="bg-white mt-[18px] h-auto  w-full block sm:hidden">
+                <div class="grid grid-cols-[91%_auto]">
+                    <div><h1 class="font-semibold text-[19px] pt-[2%] pl-[3%] pb-[1%]">Top Deals On Fashion</h1></div>
+                    <div class= "flex items-center bg-[#2A55E5] rounded-[50%] w-[25px] h-[25px] mt-[20%] mr-[1%] pl-[7px] pb-[5px] "><p class="text-white text-[20px] ">></p></div>
+                </div>
+
+                <div class=" bg-[#ffffff] mt-[18px] sm:h-[250px] h-[65px]  w-full mb-[18px]">
+                    <div class="flex w-full h-full justify-evenly">
+                        <div>
+                            <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim2.flixcart.com/fk-p-flap/450/280/image/7b80c6063ecf7931.png?q=20" alt="">
+                        </div>
+                        <div>
+                            <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim2.flixcart.com/fk-p-flap/450/280/image/edce25428279353e.jpeg?q=20" alt="">
+                        </div>
+                        <div>
+                            <img class="sm:w-[440px] w-[115px] h-full" src="https://rukminim2.flixcart.com/fk-p-flap/450/280/image/e863e64b323fb926.png?q=20" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white mt-[10px] h-auto w-full  pr-[2%]">
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[50px] w-[64px] ml-[20px]" src="https://rukminim2.flixcart.com/image/170/170/xif0q/tablet/q/g/l/-original-imagruhfgtg58rrg.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Samsung S9 Series</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 61,949*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[50px] w-[64px] ml-[20px]" src="https://rukminim2.flixcart.com/image/170/170/l4fxh8w0/computer/s/i/s/-original-imagfc54nty5wgeh.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Big Savings On i5 L ...</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 24,999*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[50px] w-[64px] ml-[20px]" src="https://rukminim2.flixcart.com/image/170/170/jrqo70w0/dslr-camera/e/d/c/d7500-d7500-nikon-original-imaf6n7gk7zkeybb.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Nikon D7500 DSLR</p>
+                            <p class="text-[15px] font-light ">Just  &#8377; 66,499*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[44px] ml-[30px]" src="https://rukminim2.flixcart.com/image/170/170/kd7pevk0/power-bank/s/n/g/power-bank-10000-pb100lzm-redmi-original-imafu5entn9mvccq.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Mi & REDMI</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 1,049*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[50px] w-[64px] ml-[20px]" src="https://rukminim2.flixcart.com/image/200/200/xif0q/monitor/o/p/5/ls22a334nhwxxl-full-hd-22-2022-ls22a334nhwxxl-samsung-original-imagsqhebkuehwfw.jpeg?q=70" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Samsung Monitors</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 5,579*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[40px] w-[64px] ml-[20px]" src="https://rukminim2.flixcart.com/image/200/200/kyxb9u80/keyboard/a/z/y/-original-imagbfufzpwx7tk3.jpeg?q=70" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold w-max">Top Brands On Keyboards</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 548*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[70px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/flap/64/64/image/24ed491dc3ff9e8a.jpg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Noise Smartwatches</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 1,399*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                    <div class="bg-white h-[84px] w-full  items-center justify-center grid grid-cols-[30%_50%_20%]">
+                        <img class="h-[40px] w-[64px] ml-[20px]" src="https://rukminim1.flixcart.com/image/64/64/xif0q/printer/d/b/a/-original-imagtzvzdyvhjshq.jpeg?q=80" alt="">
+                        <div class="grid items-center justify-start pl-[0px]">
+                            <p class="text-[15px] h-[18px] font-semibold">Printers</p>
+                            <p class="text-[15px] font-light ">From  &#8377; 10,190*</p>
+                        </div>
+                        <div class=" rounded-[50%]  flex items-center justify-end pr-[12px] pb-[.5%]">
+                            <p class="text-[16px] text-black">></p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <!-- featured brands sm ends here -->
+
+            <!-- Travel Essential Picks starts here -->
+            <div class="bg-white grid sm:grid-cols-[35%_auto] hiddensm:block  mt-[70px] h-[600px]  w-full ">
+                <div>
+                    <div class="grid sm:grid-cols-[91%_auto] grid-cols-[88%_auto]">
+                        <div><h1 class="font-semibold text-[22px] pt-[2%] pl-[3%] pb-[1%]">Travel Essential Picks</h1></div>
+                        <div class= "flex items-center bg-[#2A55E5] rounded-[50%] w-[25px] h-[25px] mt-[15px] mr-[1%] pl-[6px] pb-[5px] "><p class="text-white text-[20px] ">></p></div>
+                    </div>
+
+                    <div class="pt-[20px]">
+                        <div class="h-[255px] w-full flex">
+                            <div class="h-[255px] w-[50%] flex items-center justify-center">
+                                <div class="grid items-center justify-center h-[230px] sm:w-[200px] w-[150px]  border-[1px] border-[#dbd4d4] rounded-md">
+                                    <div class="h-[130px] w-[130px] flex items-center justify-center">
+                                        <img class="size-[130px]" src="https://rukminim1.flixcart.com/image/220/220/xif0q/headphone/t/j/u/-original-imagqre8hcncxaxk.jpeg?q=80" alt="">
+                                    </div>
+                                    <h1 class="font-semibold text-[17px]">Headset</h1>
+                                    <h1 class="font-semibold text-[green] text-[17px] mb-[10px]">Min. 50% Off</h1>
+                                </div>
+                            </div>
+                            <div class="h-[255px] w-[50%] flex items-center justify-center">
+                                <div class="grid items-center justify-center h-[230px] sm:w-[200px] w-[150px]  border-[1px] border-[#dbd4d4] rounded-md">
+                                    <div class="h-[130px] w-[130px] flex items-center justify-center">
+                                        <img class="size-[130px]" src="https://rukminim1.flixcart.com/image/170/170/jlph9jk0/cycle/h/f/k/skyper-26t-sskp26bk0001-16-hero-original-imaf8ru5xysfgtmx.jpeg?q=80" alt="">
+                                    </div>
+                                    <h1 class="font-semibold text-[17px]">Non-Geared Cycles</h1>
+                                    <h1 class="font-semibold text-[green] text-[17px] mb-[10px]">Up to 40% Off Off</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="h-[255px] w-full flex">
+                            <div class="h-[255px] w-[50%] flex items-center justify-center">
+                                <div class="grid items-center justify-center h-[230px] sm:w-[200px] w-[150px]  border-[1px] border-[#dbd4d4] rounded-md">
+                                    <div class="h-[130px] w-[130px] flex items-center justify-center">
+                                        <img class="size-[130px]" src="https://rukminim1.flixcart.com/image/220/220/l3nco7k0/duffel-bag/m/2/6/15-60-l-strolley-duffel-bag-unisex-high-density-travel-bag-with-original-imageq97nh64zb2g.jpeg?q=80" alt="">
+                                    </div>
+                                    <h1 class="font-semibold text-[17px]">HDuffel Bags</h1>
+                                    <h1 class="font-semibold text-[green] text-[17px] mb-[10px]">Min. 70% Off</h1>
+                                </div>
+                            </div>
+                            <div class="h-[255px] w-[50%] flex items-center justify-center">
+                                <div class="grid items-center justify-center h-[230px] sm:w-[200px] w-[150px]  border-[1px] border-[#dbd4d4] rounded-md">
+                                    <div class="h-[130px] w-[130px] flex items-center justify-center">
+                                        <img class="size-[130px]" src="https://rukminim1.flixcart.com/image/220/220/xif0q/torch/w/v/g/3-s700-life-saving-led-torch-glass-breaker-seal-belt-cutter-3-original-imagsghhsdsfq9jk.jpeg?q=80" alt="">
+                                    </div>
+                                    <h1 class="font-semibold text-[17px]">Torches</h1>
+                                    <h1 class="font-semibold text-[green] text-[17px] mb-[10px]">Min. 50% Off Off</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-[600px] bg-cover bg-center hidden sm:block" style="background-image: url('https://rukminim1.flixcart.com/www/660/470/promos/26/09/2023/ed27f892-1bc6-462f-805b-953f5add4f6a.jpg?q=80');"></div>
+            </div>
+            <!-- Travel Essential Picks ends here -->
+
+            <!-- recently viewed starts here -->
+            <div class="hidden sm:block bg-white mt-[18px] h-[330px]  w-full mb-[20px]">
+                <h1 class="text-[25px] font-semibold pt-[10px] pl-[20px]">Recently Viewed</h1>
+                <div class="flex  justify-evenly pr-[1%]">
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[120px]" src="https://img.fkcdn.com/image/xif0q/monitor/l/v/q/-original-imagppc7ghqzy8xw.jpeg" alt="">
+                        <p class="text-center text-[15px] h-[15px]">SAMSUNG 22 inc..</p>
+                        <p class="text-center text-[15px] font-semibold ">  &#8377; 6799 <del class="opacity-70 font-thin">11,110</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[120px]" src="https://img.fkcdn.com/image/xif0q/monitor/k/f/a/-original-imagyahh8r8njf47.jpeg" alt="">
+                        <p class="text-center text-[15px] h-[15px]">LG 21.45 inch Full...</p>
+                        <p class="text-center text-[15px] font-semibold ">  &#8377; 6299 <del class="opacity-70 font-thin">14,000</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[120px]" src="https://img.fkcdn.com/image/l3t2fm80/monitor/w/x/o/-original-imageudygqyzcqpf.jpeg" alt="">
+                        <p class="text-center text-[15px] h-[15px]">MarQ By Flipkart 2...</p>
+                        <p class="text-center text-[15px] font-semibold ">  &#8377; 6999 <del class="opacity-70 font-thin">12,999</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[120px]" src="https://img.fkcdn.com/image/xif0q/monitor/s/g/u/-original-imagzrf84gyqeste.jpeg" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Acer 21.5 inch Ful...</p>
+                        <p class="text-center text-[15px] font-semibold ">  &#8377; 5599 <del class="opacity-70 font-thin">6,999</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[120px]" src="https://rukminim2.flixcart.com/image/612/612/xif0q/watch/y/r/z/-original-imagphkzsajh8rjf.jpeg?q=70" alt="">
+                        <p class="text-center text-[15px] h-[15px]">FOSSIL RHE...</p>
+                        <p class="text-center text-[15px] font-semibold "> &#8377; 6,499 <del class="opacity-70 font-thin">8,999</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[250px] w-[200px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[120px] pl-[35px]" src="https://rukminim2.flixcart.com/image/612/612/xif0q/watch/n/z/1/-original-imagpfdvsuhqmxew.jpeg?q=70" alt="">
+                        <p class="text-center text-[15px] h-[15px]">FOSSIL Deck...</p>
+                        <p class="text-center text-[15px] font-semibold "> &#8377; 3,811 <del class="opacity-70 font-thin">9,995</del></p>
+                    </div>
+                </div>
+            </div>
+            <!-- recently viewed ends here-->
+
+            <!-- recently viewed for mobile starts here-->
+            <div class="grid bg-white sm:hidden h-[260px] w-full items-center justify-evenly overflow-x-auto hide-scrollbar">
+                <h1 class="text-[25px] font-semibold pt-[10px] pl-[20px]">Recently Viewed</h1>
+                <div class="flex">
+                    <div class="grid items-center justify-center h-[200px] w-[150px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[100px]" src="https://img.fkcdn.com/image/xif0q/monitor/l/v/q/-original-imagppc7ghqzy8xw.jpeg" alt="">
+                        <p class="text-center text-[15px] h-[15px]">SAMSUNG 22 inc..</p>
+                        <p class="text-center text-[15px] font-semibold ">  &#8377; 6799 <del class="opacity-70 font-thin">11,110</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[200px] w-[150px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[100px]" src="https://img.fkcdn.com/image/xif0q/monitor/k/f/a/-original-imagyahh8r8njf47.jpeg" alt="">
+                        <p class="text-center text-[15px] h-[15px]">LG 21.45 inch Full...</p>
+                        <p class="text-center text-[15px] font-semibold ">  &#8377; 6299 <del class="opacity-70 font-thin">14,000</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[200px] w-[150px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[100px]" src="https://img.fkcdn.com/image/l3t2fm80/monitor/w/x/o/-original-imageudygqyzcqpf.jpeg" alt="">
+                        <p class="text-center text-[15px] h-[15px]">MarQ By Flipkart 2...</p>
+                        <p class="text-center text-[15px] font-semibold ">  &#8377; 6999 <del class="opacity-70 font-thin">12,999</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[200px] w-[150px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[100px]" src="https://img.fkcdn.com/image/xif0q/monitor/s/g/u/-original-imagzrf84gyqeste.jpeg" alt="">
+                        <p class="text-center text-[15px] h-[15px]">Acer 21.5 inch Ful...</p>
+                        <p class="text-center text-[15px] font-semibold ">  &#8377; 5599 <del class="opacity-70 font-thin">6,999</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[200px] w-[150px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[100px]" src="https://rukminim2.flixcart.com/image/612/612/xif0q/watch/y/r/z/-original-imagphkzsajh8rjf.jpeg?q=70" alt="">
+                        <p class="text-center text-[15px] h-[15px]">FOSSIL RHE...</p>
+                        <p class="text-center text-[15px] font-semibold "> &#8377; 6,499 <del class="opacity-70 font-thin">8,999</del></p>
+                    </div>
+                    <div class="grid items-center justify-center h-[200px] w-[150px]  border-[1px] border-black border-opacity-20 rounded-md mt-[1%] ml-[15px]">
+                        <img class="h-[100px]" src="https://rukminim2.flixcart.com/image/612/612/xif0q/watch/n/z/1/-original-imagpfdvsuhqmxew.jpeg?q=70" alt="">
+                        <p class="text-center text-[15px] h-[15px]">FOSSIL Deck...</p>
+                        <p class="text-center text-[15px] font-semibold "> &#8377; 3,811 <del class="opacity-70 font-thin">9,995</del></p>
+                    </div>
+                </div>
+            </div>
+            <!-- recently viewed for mobile ends here-->
+        </div>
+        <!-- mainBody sections ends here -->
+
+        <footer class="h-auto w-full bg-[#222222] hidden sm:block">
+            <div class="grid grid-cols-[60%_5%_35%] text-white p-[30px] px-[50px] mb-[50px]">
+
+                <div class="grid grid-cols-4">
+                    <div>
+                        <ul>
+                            <li class="text-[#878787] text-[13px] mb-[10px]">ABOUT</li>
+                            <li class="text-[13px] font-semibold">Contact Us</li>
+                            <li class="text-[13px] font-semibold" >About Us</li>
+                            <li class="text-[13px] font-semibold">Careers</li>
+                            <li class="text-[13px] font-semibold">Flipkart Stories</li>
+                            <li class="text-[13px] font-semibold">Press</li>
+                            <li class="text-[13px] font-semibold">Corporate Information</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="text-[#878787] text-[13px] mb-[10px]">Group Companies</li>
+                            <li class="text-[13px] font-semibold">Myntra</li>
+                            <li class="text-[13px] font-semibold" >Flipkart Wholesale</li>
+                            <li class="text-[13px] font-semibold">Cleartrip</li>
+                            <li class="text-[13px] font-semibold">Shopsy</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="text-[#878787] text-[13px] mb-[10px]">HELP</li>
+                            <li class="text-[13px] font-semibold">Payments</li>
+                            <li class="text-[13px] font-semibold" >Shipping</li>
+                            <li class="text-[13px] font-semibold">Cancellation & Returns</li>
+                            <li class="text-[13px] font-semibold">FAQ</li>
+                            <li class="text-[13px] font-semibold">Report Infringement</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="text-[#878787] text-[13px] mb-[10px]">Consumer Policy</li>
+                            <li class="text-[13px] font-semibold">Cancellation & Returns</li>
+                            <li class="text-[13px] font-semibold">Terms Of Use</li>
+                            <li class="text-[13px] font-semibold" >Security</li>
+                            <li class="text-[13px] font-semibold">Privacy</li>
+                            <li class="text-[13px] font-semibold">Sitemap</li>
+                            <li class="text-[13px] font-semibold">Grievance Redressal</li>
+                            <li class="text-[13px] font-semibold">EPR Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="h-full w-[.5px] bg-[#878787]"></div>
+
+                <div class="grid grid-cols-2">
+                    <div class="w-[200px]">
+                        <h1 class="text-[#878787] text-[13px] mb-[10px]">Mail Us:</h1>
+                        <p class="text-[13px]">Flipkart Internet Private Limited,
+                            Buildings Alyssa, Begonia &
+                            Clove Ring Road, Devarabeesanahalli Village,
+                            Bengaluru, 560103,
+                            Karnataka, India
+                        </p>
+                        <h1 class="text-[#878787] text-[13px] mb-[10px] mt-[20px]">Social:</h1>
+                        
+                        <div class="flex justify-evenly mr-[60px]">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwM
+                        DAvc3ZnIj4KPHBhdGggZD0iTTEyLjkzMzEgMjFDMTcuOTAzNyAyMSAyMS45MzMxIDE2Ljk3MDYgMjEuOTMzMSAxMkMyMS45MzMxIDcuMDI5NDQgMTcuOTAzNyAzIDEyLjkzMzEgM0M3Ljk2MjU0IDMgMy45MzMxMSA3L
+                        jAyOTQ0IDMuOTMzMTEgMTJDMy45MzMxMSAxNi45NzA2IDcuOTYyNTQgMjEgMTIuOTMzMSAyMVoiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5
+                        lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE2LjY4MzEgOC4yNUgxNS4xODMxQzE0LjU4NjQgOC4yNSAxNC4wMTQxIDguNDg3MDUgMTMuNTkyMSA4LjkwOTAxQzEzLjE3MDIgOS4zMzA5NyAxMi45MzMxIDkuOTAzMjYgM
+                        TIuOTMzMSAxMC41VjIxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIG
+                        Q9Ik05LjkzMzExIDEzLjVIMTUuOTMzMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K" alt="">
+                        
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDA
+                        vc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzE4M18yMCkiPgo8cGF0aCBkPSJNMTMuNTQzNiAxMC42MTc5TDIwLjA5NzEgM0gxOC41NDQxTDEyLjg1MzcgOS42MTQ0OEw4LjMwODg3IDNIMy4wNjY
+                        4OUw5LjkzOTY0IDEzLjAwMjNMMy4wNjY4OSAyMC45OTA4SDQuNjE5OTRMMTAuNjI5MSAxNC4wMDU2TDE1LjQyODggMjAuOTkwOEgyMC42NzA4TDEzLjU0MzIgMTAuNjE3OUgxMy41NDM2Wk0xMS40MTY1IDEz
+                        LjA5MDRMMTAuNzIwMiAxMi4wOTQ0TDUuMTc5NTMgNC4xNjkxMUg3LjU2NDkxTDEyLjAzNjMgMTAuNTY1MUwxMi43MzI2IDExLjU2MTFMMTguNTQ0OCAxOS44NzQ4SDE2LjE1OTVMMTEuNDE2NSAxMy4wOTA4Vj
+                        EzLjA5MDRaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzE4M18yMCI+CjxyZWN0IHg9IjMuMDY2ODkiIHk9IjMiIHdpZHRoP
+                        SIxNy42MDM5IiBoZWlnaHQ9IjE4IiByeD0iMC4yIiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=" alt="">
+
+                        <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/YoutubeLogo-8425c4.svg" alt="">
+                        </div>
+                    
+                    </div>
+                    <div class="w-[200px]">
+                        <h1 class="text-[#878787] text-[13px] mb-[10px]">Registered Office Address:</h1>
+                        <p class="text-[13px]">Flipkart Internet Private Limited,
+                            Buildings Alyssa, Begonia &
+                            Clove Ring Road, Devarabeesanahalli Village,
+                            Bengaluru, 560103,
+                            Karnataka, India <br>
+                            CIN : U51109KA2012Pt109908
+                            Telephone: 044-45614700
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-[.5px] w-full bg-[grey]"></div>
+
+            <div class="text-white flex  items-center justify-evenly">
+                <div class="flex text-[12px] h-[70px] items-center">
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/sell-image-9de8ef.svg" alt="">
+                    <p class="pl-[8px]">Become a Seller</p>
+                </div>
+                <div class="flex text-[12px] h-[70px] items-center">
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/advertise-image-866c0b.svg" alt="">
+                    <p class="pl-[8px]">Advertise</p>
+                </div>
+                <div class="flex text-[12px] h-[70px] items-center">
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/gift-cards-image-d7ff24.svg" alt="">
+                    <p class="pl-[8px]" >Gift Cards</p>
+                </div>
+                <div class="flex text-[12px] h-[70px] items-center">
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/help-centre-image-c4ace8.svg" alt="">
+                    <p class="pl-[8px]">Help Center</p>
+                </div>
+                <div class="flex text-[12px] h-[70px] items-center">
+                    <p>&copy 2007-2024 Flipkart.com</p>
+                </div>
+                <div class="flex text-[12px] h-[70px] items-center">
+                    <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/payment-method-c454fb.svg" alt="">
+                </div>
+                
+            </div>
+
+            <div class="h-[.5px] w-full bg-[#878787] mb-[20px]"></div>
+
+            <div>
+                <h1 class="text-center text-[#c3bfbf] text-[13px] opacity-50">Created by Suvesh Pandey. Just for learning purpose only, nothing is real in this webpage.</h1>
+                <p class="text-center text-[#c3bfbf] text-[13px] opacity-50">&copy; [2024] All Rights Reserved | Suvesh Pandey</p><br>
+            </div>
+        </footer>
+        <div class="bg-[#1a1717] block sm:hidden">
+            <h1 class=" text-center text-[#c3bfbf] text-[13px] opacity-50">Created by Suvesh Pandey. Just for learning purpose only, nothing is real in this webpage.</h1>
+            <p class="text-center text-[#c3bfbf] text-[13px] opacity-50">&copy; [2024] All Rights Reserved | Suvesh Pandey</p><br>
+        </div>
+
+    <script>
+      const adElement = document.querySelector('.ad');
+      const images = [
+          "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/652e7aa3839cd98d.jpg?q=20",
+          "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/97f695ce49d7a367.jpg?q=20",
+          "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/e081961d94023058.jpeg?q=20",
+          "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/d523b3be81ebfb40.jpg?q=20",
+          "https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/8424187dc503b2b4.png?q=20"
+      ];
+      let currentIndex = 0;
+  
+      function changeImage() {
+          currentIndex = (currentIndex + 1) % images.length;
+          const currentImage = adElement.querySelector('img');
+          const nextImage = document.createElement('img');
+          nextImage.src = images[currentIndex];
+          nextImage.style.left = "100%"; // Initial position outside the container
+          nextImage.style.transition = "left 1s ease"; // Adjust transition for smooth effect
+          adElement.appendChild(nextImage);
+          
+          // Trigger reflow to ensure the transition works
+          nextImage.offsetWidth;
+  
+          currentImage.style.left = "-100%"; // Slide current image out to the left
+          nextImage.style.left = "0"; // Slide next image in from the right
+  
+          // Remove the current image after the transition
+          setTimeout(() => {
+              adElement.removeChild(currentImage);
+          }, 1000); // Adjust this timeout to match the transition duration
+      }
+  
+      setInterval(changeImage, 2000);
+    </script>
+    
+</body>
+
+
+</html>
